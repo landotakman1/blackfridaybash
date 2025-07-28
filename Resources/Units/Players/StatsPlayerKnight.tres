@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://pxubn12vm1u3"]
+
+[ext_resource type="Texture2D" uid="uid://bt0lww88864ws" path="res://assets/sprites/Players/Player_5.png" id="1_2bqh4"]
+[ext_resource type="Script" uid="uid://gtiihwe2l2ar" path="res://Resources/Units/UnitStats.gd" id="2_a05t3"]
+
+[resource]
+script = ExtResource("2_a05t3")
+name = "Knight"
+type = 0
+icon = ExtResource("1_2bqh4")
+health = 30
+health_increase_per_wave = 0.0
+damage = 6
+damage_increase_per_wave = 0.0
+speed = 260
+luck = 1.0
+block_chance = 10.0
+gold_drop = 0
+metadata/_custom_type_script = "uid://gtiihwe2l2ar"

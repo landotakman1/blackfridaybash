@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://c1tjpkygjo7yq"]
+
+[ext_resource type="Texture2D" uid="uid://dxl550mv1d5l6" path="res://assets/sprites/Upgrades/3.png" id="1_7a00k"]
+[ext_resource type="Script" uid="uid://6bgj230yphdc" path="res://Resources/Items/Upgrades/Data/ItemUpgrade.gd" id="2_mkkm1"]
+
+[resource]
+script = ExtResource("2_mkkm1")
+value = 2.0
+description = "+ 2%"
+stat_id = "life_steal"
+item_name = "Life Steal"
+item_icon = ExtResource("1_7a00k")
+item_tier = 0
+item_type = 1
+item_cost = 0
+metadata/_custom_type_script = "uid://6bgj230yphdc"

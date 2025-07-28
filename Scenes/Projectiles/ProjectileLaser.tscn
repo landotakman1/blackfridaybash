@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dib8t3fi4x6mx"]
+
+[ext_resource type="PackedScene" uid="uid://cga6wwta7m7y1" path="res://Scenes/Projectiles/ProjectilePistol.tscn" id="1_5n2ah"]
+[ext_resource type="Texture2D" uid="uid://3c2kwaw7powj" path="res://assets/sprites/Projectiles/Projectile_3.png" id="2_6xbs6"]
+
+[node name="ProjectileLaser" instance=ExtResource("1_5n2ah")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_6xbs6")

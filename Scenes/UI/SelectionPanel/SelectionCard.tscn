@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://brkhryd5tni0a"]
+
+[ext_resource type="StyleBox" uid="uid://d2nhtn83ckc8g" path="res://Styles/CommonStyle.tres" id="1_mhk7u"]
+[ext_resource type="Script" uid="uid://dooh28plkc6vr" path="res://Scenes/UI/SelectionPanel/SelectionCard.gd" id="2_xyres"]
+
+[node name="SelectionCard" type="Button"]
+custom_minimum_size = Vector2(128, 128)
+theme_override_styles/normal = ExtResource("1_mhk7u")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xyres")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

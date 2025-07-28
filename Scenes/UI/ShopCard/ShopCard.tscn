@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvqmw2qr12qb8"]
+
+[ext_resource type="Script" uid="uid://ofmypcbfuusq" path="res://Scenes/UI/ShopCard/ShopCard.gd" id="1_5vsc5"]
+[ext_resource type="StyleBox" uid="uid://d2nhtn83ckc8g" path="res://Styles/CommonStyle.tres" id="1_chgb0"]
+[ext_resource type="Texture2D" uid="uid://cyh23wqn8vcac" path="res://assets/sprites/Weapons/Icons/weapon_punch_icon.png" id="3_1xvkx"]
+[ext_resource type="PackedScene" uid="uid://b7xsrf8tucg53" path="res://Scenes/UI/CustomButton/CustomButton.tscn" id="4_xjkoi"]
+[ext_resource type="Texture2D" uid="uid://chm4srsn6xd8y" path="res://assets/sprites/Gold/gold_1.png" id="5_c4a3v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y41ab"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 0.784314)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lp6b"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_4gx8f"]
+font_size = 40
+
+[node name="ShopCard" type="Panel"]
+custom_minimum_size = Vector2(320, 400)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_chgb0")
+script = ExtResource("1_5vsc5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ItemBG" type="Panel" parent="MarginContainer/Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y41ab")
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_1xvkx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 118.0
+offset_right = 253.0
+offset_bottom = 29.0
+text = "Item Name"
+label_settings = SubResource("LabelSettings_4lp6b")
+
+[node name="ItemType" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 118.0
+offset_top = 40.0
+offset_right = 253.0
+offset_bottom = 69.0
+text = "Item Type"
+label_settings = SubResource("LabelSettings_4lp6b")
+
+[node name="ItemDescription" type="RichTextLabel" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(288, 186)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -260.0
+offset_right = 145.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Description"
+
+[node name="BuyButton" parent="MarginContainer/Control" instance=ExtResource("4_xjkoi")]
+custom_minimum_size = Vector2(240, 70)
+layout_mode = 1
+offset_left = -120.0
+offset_top = -70.0
+offset_right = 120.0
+text = ""
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/BuyButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/BuyButton/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_c4a3v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinsLabel" type="Label" parent="MarginContainer/Control/BuyButton/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "30"
+label_settings = SubResource("LabelSettings_4gx8f")
+
+[connection signal="pressed" from="MarginContainer/Control/BuyButton" to="." method="_on_buy_button_pressed"]

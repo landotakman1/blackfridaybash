@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6aess3eedn35"]
+
+[ext_resource type="StyleBox" uid="uid://d2nhtn83ckc8g" path="res://Styles/CommonStyle.tres" id="1_gxg2a"]
+[ext_resource type="Script" uid="uid://bu6f1ij8s1rr4" path="res://Scenes/UI/UpgradeCard/UpgradeCard.gd" id="1_l44j3"]
+[ext_resource type="Texture2D" uid="uid://dn68qq5evmvwa" path="res://assets/sprites/Upgrades/12.png" id="3_pu8cw"]
+[ext_resource type="PackedScene" uid="uid://b7xsrf8tucg53" path="res://Scenes/UI/CustomButton/CustomButton.tscn" id="4_o7ask"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hu770"]
+font_size = 28
+
+[node name="UpgradeCard" type="Panel"]
+custom_minimum_size = Vector2(300, 220)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_gxg2a")
+script = ExtResource("1_l44j3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_pu8cw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 292.0
+offset_bottom = 49.0
+text = "Damage"
+label_settings = SubResource("LabelSettings_hu770")
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+modulate = Color(0.827451, 0.909804, 0.172549, 1)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 49.0
+offset_right = 292.0
+offset_bottom = 88.0
+text = "+ 1"
+label_settings = SubResource("LabelSettings_hu770")
+vertical_alignment = 1
+
+[node name="CustomButton" parent="MarginContainer/Control" instance=ExtResource("4_o7ask")]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 1
+offset_left = -130.0
+offset_top = -58.0
+offset_right = 130.0
+
+[connection signal="pressed" from="MarginContainer/Control/CustomButton" to="." method="_on_custom_button_pressed"]

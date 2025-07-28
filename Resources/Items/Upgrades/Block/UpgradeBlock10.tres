@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://brvcq7uwgpui1"]
+
+[ext_resource type="Texture2D" uid="uid://byg3400qlcem6" path="res://assets/sprites/Upgrades/8.png" id="1_utkq3"]
+[ext_resource type="Script" uid="uid://6bgj230yphdc" path="res://Resources/Items/Upgrades/Data/ItemUpgrade.gd" id="2_6vh16"]
+
+[resource]
+script = ExtResource("2_6vh16")
+value = 10.0
+description = "+ 10%"
+stat_id = "block_chance"
+item_name = "Block"
+item_icon = ExtResource("1_utkq3")
+item_tier = 2
+item_type = 1
+item_cost = 0
+metadata/_custom_type_script = "uid://6bgj230yphdc"
